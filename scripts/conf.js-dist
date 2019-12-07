@@ -3,9 +3,6 @@
 
    DO NOT USE ANY FILESYSTEM PATH */
 
-define({
-
-  /* URL to access your Tiny Tiny RSS installation */
-  apiPath: "/tt-rss/"
-
-});
+if (!(localStorage['url'])) {
+   localStorage['url'] = "/tt-rss/"
+}

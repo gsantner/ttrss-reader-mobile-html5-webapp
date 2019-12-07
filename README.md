@@ -85,3 +85,5 @@ License
 ------------------
 
 ttrss-mobile is Free Software under the [AGPLv3](LICENSE)
+
+The tt-rss project is licensed under the GPLv3 LICENSE, source is the original tt-rss project.

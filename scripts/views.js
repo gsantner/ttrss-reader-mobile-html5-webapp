@@ -193,7 +193,7 @@ define(['jquery', 'models', 'templates','conf','utils'],
       // get the icons directory from the conf
       var iconsDir = models.configModel.get("icons_dir");
 
-      var iconSrc = conf.apiPath + iconsDir +
+      var iconSrc = localStorage['url'] + iconsDir +
                     "/" + this.model.id + ".ico";
 
       var img = document.createElement('img');
@@ -219,6 +219,10 @@ define(['jquery', 'models', 'templates','conf','utils'],
         // asked by the page view
         models.configModel.once("change:icons_dir", this.addIcon, this);
       }
+		if (typeof(Storage) !== "undefined" && localStorage['url']) {
+	conf.apiPath = localStorage['url'];
+}
+
 
       // the link src
       var link = "#cat" + utils.getCurrentCatId() + "/feed" + this.model.id;

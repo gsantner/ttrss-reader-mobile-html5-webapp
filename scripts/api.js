@@ -4,9 +4,10 @@
 define(['require','jquery','conf','router','models','utils'],
        function(require, $, conf, router, models, utils){
 
+
   // AJAX defaults
   $.ajaxSetup({
-    url: conf.apiPath + 'api/',
+    url: localStorage['url'] + 'api/',
     contentType: "application/json",
     dataType: 'json',
     cache: 'false',
@@ -24,9 +25,10 @@ define(['require','jquery','conf','router','models','utils'],
       //DONE
 
       if (jqXHR.status != 200){
-        alert ("There is probably a configuration error." +
-               " An API call returned: "+ jqXHR.status +
-               " (" + jqXHR.statusText + ")");
+        //alert ("There is probably a configuration error." +
+        //       " An API call returned: "+ jqXHR.status +
+        //       " (" + jqXHR.statusText + ")");
+		window.location.hash = "#login";
       } else {
         // API errors go to the console
         utils.log('API error: ' + thrownError);

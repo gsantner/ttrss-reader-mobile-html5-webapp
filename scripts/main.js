@@ -37,6 +37,13 @@ requirejs(['jquery','backbone','conf','router','api','utils','models'],
       $.mobile.loading( 'show', { text: 'Authenticating...', textVisible: true} );
       e.preventDefault();
 
+
+	if (typeof(Storage) !== "undefined") {
+      localStorage['url'] = $('#urlInput').val();
+      localStorage['username'] = $('#loginInput').val();
+      localStorage['password'] = $('#passwordInput').val();
+    }
+
       // message to send
       var data = {
         op: "login",
@@ -46,7 +53,7 @@ requirejs(['jquery','backbone','conf','router','api','utils','models'],
 
       jQuery.ajax(
         {
-          url: conf.apiPath + 'api/',
+          url: localStorage['url'] + 'api/',
           contentType: "application/json",
           dataType: 'json',
           cache: 'false',
@@ -115,6 +122,9 @@ requirejs(['jquery','backbone','conf','router','api','utils','models'],
 
       // alternative to localStorage using cookies
       utils.localStorageSupport();
+      if (localStorage['url']) { $('#urlInput').val(localStorage['url']); }
+      if (localStorage['username']) { $('#loginInput').val(localStorage['username']); }
+      if (localStorage['password']) { $('#passwordInput').val(localStorage['password']); }
       
       // events for login page
       registerLoginPageActions();

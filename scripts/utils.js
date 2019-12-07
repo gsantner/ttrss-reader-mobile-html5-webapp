@@ -16,6 +16,7 @@ define(['jquery'],function($){
     log: function(m){
       if (typeof console !== 'undefined'){
         console.log(m);        
+		window.location.hash = "#login";
       }
     },
 
