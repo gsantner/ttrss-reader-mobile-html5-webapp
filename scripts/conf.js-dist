@@ -6,3 +6,6 @@
 if (!(localStorage['url'])) {
    localStorage['url'] = "/tt-rss/"
 }
+
+define({
+});
