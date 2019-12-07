@@ -74,3 +74,11 @@ div#read div[data-role=content]>div.main pre {
   padding-top: 0em;
   padding-bottom: 0em;
 }
+
+.ui-header.ui-bar-inherit {
+  background-image: radial-gradient(#FA9D39, #F79737, #F08934, #EF8733, #E97C30, #E3702D);
+}
+.ui-title {
+    text-shadow: none;
+	font-size: 130% !important;
+}

@@ -39,9 +39,11 @@ requirejs(['jquery','backbone','conf','router','api','utils','models'],
 
 
 	if (typeof(Storage) !== "undefined") {
+	  var reload = ( localStorage['url'] !== $('#urlInput').val());
       localStorage['url'] = $('#urlInput').val();
       localStorage['username'] = $('#loginInput').val();
       localStorage['password'] = $('#passwordInput').val();
+		if (reload) {  location.reload();  }
     }
 
       // message to send
