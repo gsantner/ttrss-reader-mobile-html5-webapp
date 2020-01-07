@@ -34,11 +34,24 @@ define(['underscore'], function(_){
       '<h3><%= title %></h3>' +
       '<p class="ui-li-desc"><%= date %></p></a>'),
 
+    articleLiElementWithIcon : 
+      _.template('<a href="<%= href %>">' +
+      '<img src="<%= img %>" class="ui-li-icon"></img><h3><%= title %></h3>' +
+      '<p class="ui-li-desc"><%= date %></p></a>'),
+
     // the content of a LI element for an article with the feed Name
     articleFeedLiElement : 
       _.template(
         '<a href="<%= href %>">' +
         '<h3><%= title %></h3>' +
+        '<p class="ul-li-desc"><strong><%= feed %></strong></p>' +
+        '<p class="ui-li-desc"><%= date %></p></a>'
+      ),
+
+    articleFeedLiElementWithIcon : 
+      _.template(
+        '<a href="<%= href %>">' +
+        '<img src="<%= img %>" class="ui-li-icon"></img><h3><%= title %></h3>' +
         '<p class="ul-li-desc"><strong><%= feed %></strong></p>' +
         '<p class="ui-li-desc"><%= date %></p></a>'
       ),

@@ -477,6 +477,7 @@ define(['jquery', 'models', 'templates','conf','utils'],
       var html;
       var catId = utils.getCurrentCatId();
       var feedId = utils.getCurrentFeedId();
+      var feedIdReal = this.model.get("feed_id");
       var feedTitle = this.model.get("feed_title");
       var unread = this.model.get("unread");
 
@@ -484,17 +485,19 @@ define(['jquery', 'models', 'templates','conf','utils'],
         // normal cat, we don't need to show the feed name (it's in the header)
         // or we don't have it yet
 
-        html = tpl.articleLiElement({
+      html = tpl.articleLiElementWithIcon({
           href:  link,
           date:  dateStr,
+          img:  (conf.apiPath + "feed-icons/" + feedId + ".ico"),
           title: this.model.get('title') });
 
       } else {
         // special cat, we show the feed name
 
-        html = tpl.articleFeedLiElement({
+        html = tpl.articleFeedLiElementWithIcon({
           href:  link,
           date:  dateStr,
+          img:  (conf.apiPath + "feed-icons/" + feedIdReal + ".ico"),
           title: this.model.get('title'),
           feed: feedTitle });
       }
