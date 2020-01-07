@@ -36,8 +36,8 @@ define(['underscore'], function(_){
 
     articleLiElementWithIcon : 
       _.template('<a href="<%= href %>">' +
-      '<img src="<%= img %>" class="ui-li-icon"></img><h3><%= title %></h3>' +
-      '<p class="ui-li-desc"><%= date %></p></a>'),
+      '<img src="<%= img %>" class="ui-li-icon"></img><h3><%= title %><span style="float: right;" class="extra ui-li-desc"><%= date %></span></h3>' +
+      '</a>'),
 
     // the content of a LI element for an article with the feed Name
     articleFeedLiElement : 
@@ -52,8 +52,8 @@ define(['underscore'], function(_){
       _.template(
         '<a href="<%= href %>">' +
         '<img src="<%= img %>" class="ui-li-icon"></img><h3><%= title %></h3>' +
-        '<p class="ul-li-desc"><strong><%= feed %></strong></p>' +
-        '<p class="ui-li-desc"><%= date %></p></a>'
+        '<p class="ul-li-desc"><strong><%= feed %></strong><span style="float: right;" class="extra ui-li-desc"><%= date %></span></p>' +
+        '</a>'
       ),
 
     // button for the prev/next
