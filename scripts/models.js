@@ -158,7 +158,11 @@ define(['api','backbone','utils'],
             }
 
             // Enable icon for all feeds. <= 0 = default rss image
-            for (var i=0; i < res.length; res[i++]["has_icon"] = true);
+            for (var i=0; i < res.length; i++) {
+              if (res[i]["id"] <= 0) {
+                res[i]["has_icon"] = true;
+              }
+            }
 
             // set collection with updated data
             collection.set(res);
