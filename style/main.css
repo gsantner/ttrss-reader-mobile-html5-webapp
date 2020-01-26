@@ -85,3 +85,14 @@ div#read div[data-role=content]>div.main pre {
     text-shadow: none;
 	font-size: 130% !important;
 }
+
+.article-list-article-title-only {
+  font-size: 0.90em !important;
+  max-width: 900px;
+
+  /* Max 2 lines, second ellipsis when required */
+  white-space: normal !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

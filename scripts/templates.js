@@ -51,8 +51,8 @@ define(['underscore'], function(_){
     articleFeedLiElementWithIcon : 
       _.template(
         '<a href="<%= href %>">' +
-        '<img src="<%= img %>" class="ui-li-icon"></img><h3><%= title %></h3>' +
-        '<p class="ul-li-desc"><strong><%= feed %></strong><span style="float: right;" class="extra ui-li-desc"><%= date %></span></p>' +
+        '<img src="<%= img %>" class="ui-li-icon"></img><h3 class="article-list-article-title-only"><%= title %></h3>' +
+        '<p class="ul-li-desc"><%= date %><span style="float: right;max-width: 50%;" class="extra ui-li-desc"><%= feed %></span></p>' +
         '</a>'
       ),
 

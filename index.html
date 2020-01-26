@@ -236,7 +236,7 @@
   <script>
 
     window.addEventListener("keydown", function(e){
-      if (document.activeElement === 'text') { return;}
+      if (document.activeElement.nodeName.toLowerCase() === 'input') { return;}
       
       switch(e.keyCode) {
         case 8: // backspace = go home
