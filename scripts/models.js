@@ -42,7 +42,7 @@ define(['api','backbone','utils'],
       articlesNumber: 200,
       articlesOldestFirst: false,
       darkMode: false,
-      onlyUnread: true
+      onlyUnread: false
     },
 
     validate: function(attrs, options){
@@ -90,7 +90,7 @@ define(['api','backbone','utils'],
         var request = {
           op:             "getCategories",
           enable_nested:  "false", // we want nested ones but they will not be nested yet
-          unread_only:    settings.attributes.onlyUnread // get only feeds with unread articles
+          unread_only:    false //settings.attributes.onlyUnread // get only feeds with unread articles
         };
 
         api.ttRssApiCall(request, function(res){
