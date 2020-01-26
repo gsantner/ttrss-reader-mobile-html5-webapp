@@ -138,6 +138,23 @@ define(['api','backbone','utils'],
         api.ttRssApiCall(
           request,
           function(res){
+            // [{"feed_url":"URL","title":"Displayed","id":123,"unread":18,"has_icon":true,"cat_id":15,"last_updated":1234,"order_id":0}]
+
+            // Inject "all articles of category"
+            if (res[0]["cat_id"] >= 0) { 
+              var allOfThisFeed = {
+                "feed_url": "http://127.0.0.1",
+                "title": "All from category",
+                "id": parseInt(-9 + res[0]["cat_id"].toString()),
+                "unread": res.reduce(function(old, entry) { return old + entry["unread"]; }, 0),
+                "has_icon": false,
+                "cat_id": res[0]["cat_id"],
+                "last_updated": res[0]["last_updated"],
+                "order_id": -9,
+              };
+              res.unshift(allOfThisFeed);
+            }
+
             // set collection with updated data
             collection.set(res);
 
@@ -287,7 +304,7 @@ define(['api','backbone','utils'],
           order_by:       orderBy
         };
         
-        if (feedId == -9){
+        if (feedId.toString().startsWith("-9")){
           // special case (all articles from a whole category)
           msg.feed_id = utils.getCurrentCatId();
           msg.is_cat = true;
