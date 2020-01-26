@@ -1082,9 +1082,11 @@ define(['jquery', 'models', 'templates','conf','utils'],
       var artNumber = this.model.get("articlesNumber");
       var artOldestFirst = this.model.get("articlesOldestFirst");
       var onlyUnread = this.model.get("onlyUnread");
+      var darkMode = this.model.get("darkMode");
       this.$("#articles-number").attr("value", artNumber);
       this.$("#articles-oldest-first").prop("checked", artOldestFirst).checkboxradio("refresh");
       this.$("#only-unread").prop("checked", onlyUnread).checkboxradio("refresh");
+      this.$("#dark-mode-option").prop("checked", darkMode).checkboxradio("refresh");
       return this;
     },
 
@@ -1095,6 +1097,7 @@ define(['jquery', 'models', 'templates','conf','utils'],
         {
           articlesNumber: $("#articles-number").val(),
           articlesOldestFirst: $("#articles-oldest-first").prop("checked"),
+          darkMode: $("#dark-mode-option").prop("checked"),
           onlyUnread: $("#only-unread").prop("checked")
         },
         {validate: true}

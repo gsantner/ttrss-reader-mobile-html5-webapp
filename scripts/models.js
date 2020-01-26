@@ -41,6 +41,7 @@ define(['api','backbone','utils'],
     defaults: {
       articlesNumber: 10,
       articlesOldestFirst: false,
+      darkMode: false,
       onlyUnread: false
     },
 
