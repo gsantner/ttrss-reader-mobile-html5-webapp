@@ -175,7 +175,7 @@
     </div><!-- header -->
     <div data-role="content">
       <div class="header">
-        <h3><a href="" target="_blank"></a></h3>
+        <h3><a class="open-article-link" href="" target="_blank"></a></h3>
         <p class="feed">Feed: <span></span></p>
         <p class="updateTime">Updated: <span></span></p>
       </div>
@@ -185,7 +185,7 @@
           <div class="gsnavbar-dock">
             <button type="button" onclick="document.getElementsByClassName('backButton')[0].click();"                   ><span>⬅</span><br/>Back</button>
             <button type="button" onclick="document.getElementsByClassName('ui-link ui-btn ui-icon-arrow-r ui-btn-icon-right ui-corner-all')[0].click()" ><span>➡️</span><br/>Next</button>
-            <button type="button" onclick="location.reload();"                       ><span>🔄</span><br/>Reload</button>
+            <button type="button" onclick="document.getElementsByClassName('open-article-link ui-link')[0].click();"                       ><span>🌍</span><br/>Extern</button>
             <button type="button" onclick="window.location.href='index.html#home'"><span>🏠</span><br/>Home</button>
           </div>
         </div>
