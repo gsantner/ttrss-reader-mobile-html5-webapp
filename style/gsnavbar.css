@@ -5,3 +5,9 @@
 .gsnavbar-dock button span { font-size: 160%;} 
 
 .ui-content { margin-bottom: 80px !important; }
+
+.project-help-more-faq { padding:0; margin:0; text-align: center; font-size: 0.85em; }
+.project-help-more-faq, .project-help-more-faq a, .project-help-more-faq a:link, .project-help-more-faq a:visited {
+  color: darkgrey !important;
+  text-shadow: 0 0 !important;
+}

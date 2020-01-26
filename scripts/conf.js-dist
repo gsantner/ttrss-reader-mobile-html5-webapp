@@ -4,7 +4,8 @@
    DO NOT USE ANY FILESYSTEM PATH */
 
 if (!(localStorage['url'])) {
-   localStorage['url'] = "/tt-rss/"
+   localStorage['url'] = "/ttrss/";
+   localStorage['username'] = "ttrss";
 }
 
 define({
