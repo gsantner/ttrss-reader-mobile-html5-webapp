@@ -223,7 +223,6 @@ define(['jquery', 'models', 'templates','conf','utils'],
 	conf.apiPath = localStorage['url'];
 }
 
-
       // the link src
       var link = "#cat" + utils.getCurrentCatId() + "/feed" + this.model.id;
 
@@ -481,7 +480,7 @@ define(['jquery', 'models', 'templates','conf','utils'],
       var feedTitle = this.model.get("feed_title");
       var unread = this.model.get("unread");
 
-      if (((catId >= 0) && (feedId != -9)) || (feedTitle == undefined)){
+      if (((catId >= 0) && !feedId.toString().startsWith("-9")) || (feedTitle == undefined)){
         // normal cat, we don't need to show the feed name (it's in the header)
         // or we don't have it yet
 
