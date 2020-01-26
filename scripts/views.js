@@ -196,6 +196,9 @@ define(['jquery', 'models', 'templates','conf','utils'],
       var iconSrc = localStorage['url'] + iconsDir +
                     "/" + this.model.id + ".ico";
 
+      if (this.model.id <= 0) {
+        iconSrc = "touch-icon-iphone.png";
+      }
       var img = document.createElement('img');
       img.src = iconSrc;
       $(img).addClass("ui-li-icon");
@@ -238,6 +241,10 @@ define(['jquery', 'models', 'templates','conf','utils'],
       } else {
         // we add an icon
         var iconSrc = conf.apiPath + iconsDir + "/" + this.model.id + ".ico";
+        
+        if (this.model.id <= 0) {
+          iconSrc = "touch-icon-iphone.png";
+        }
 
         html = tpl.listElementWithIcon({
           href: link,

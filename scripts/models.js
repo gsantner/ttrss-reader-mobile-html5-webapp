@@ -144,16 +144,21 @@ define(['api','backbone','utils'],
             if (res[0]["cat_id"] >= 0) { 
               var allOfThisFeed = {
                 "feed_url": "http://127.0.0.1",
-                "title": "All from category",
+                "title": "* All from category",
                 "id": parseInt(-9 + res[0]["cat_id"].toString()),
                 "unread": res.reduce(function(old, entry) { return old + entry["unread"]; }, 0),
-                "has_icon": false,
+                "has_icon": true,
                 "cat_id": res[0]["cat_id"],
-                "last_updated": res[0]["last_updated"],
-                "order_id": -9,
+                "last_updated": 0,
               };
               res.unshift(allOfThisFeed);
+              for (var i=0; i < res.length; i++) {
+                res[i]["order_id"] = i;
+              }
             }
+
+            // Enable icon for all feeds. <= 0 = default rss image
+            for (var i=0; i < res.length; res[i++]["has_icon"] = true);
 
             // set collection with updated data
             collection.set(res);
