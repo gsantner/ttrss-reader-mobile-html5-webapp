@@ -109,6 +109,11 @@ requirejs(['jquery','backbone','conf','router','api','utils','models'],
     $.mobile.pushStateEnabled = false;
     $.mobile.changePage.defaults.changeHash = false;
     $.mobile.defaultPageTransition = "slide";
+    
+    // https://stackoverflow.com/questions/7667603/change-data-theme-in-jquery-mobile
+    $.mobile.changeGlobalTheme = function(theme)  {  var themes = " a b c d e";  function setTheme(cssSelector, themeClass, theme)  {  $(cssSelector)  .removeClass(themes.split(" ").join(" " + themeClass + "-"))  .addClass(themeClass + "-" + theme)  .attr("data-theme", theme);  }  setTheme(".ui-mobile-viewport", "ui-overlay", theme);  setTheme("[data-role='page']", "ui-body", theme);  setTheme("[data-role='header']", "ui-bar", theme);  setTheme("[data-role='listview'] > li", "ui-bar", theme);  setTheme(".ui-btn", "ui-btn-up", theme);  setTheme(".ui-btn", "ui-btn-hover", theme);  };
+
+    //$.mobile.changeGlobalTheme("b");
   });
 
 

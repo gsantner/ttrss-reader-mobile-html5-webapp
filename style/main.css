@@ -78,6 +78,9 @@ div#read div[data-role=content]>div.main pre {
 .ui-header.ui-bar-inherit {
   background-image: radial-gradient(#FA9D39, #F79737, #F08934, #EF8733, #E97C30, #E3702D);
 }
+.ui-bar-b, .ui-page-theme-b .ui-bar-inherit, html .ui-bar-b .ui-bar-inherit, html .ui-body-b .ui-bar-inherit, html body .ui-group-theme-b .ui-bar-inherit {
+  background-image: radial-gradient(#FA9D39, #F79737, #F08934, #EF8733, #E97C30, #E3702D);
+}
 .ui-title {
     text-shadow: none;
 	font-size: 130% !important;
