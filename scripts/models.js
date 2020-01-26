@@ -39,10 +39,10 @@ define(['api','backbone','utils'],
     }, //sync
 
     defaults: {
-      articlesNumber: 10,
+      articlesNumber: 200,
       articlesOldestFirst: false,
       darkMode: false,
-      onlyUnread: false
+      onlyUnread: true
     },
 
     validate: function(attrs, options){
