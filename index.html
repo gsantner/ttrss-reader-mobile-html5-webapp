@@ -136,7 +136,6 @@
         data-icon="back"
         data-mini="true" class="ui-btn-left backButton">Back</a>
       <h1>Feed</h1>
-      <a data-role="button" data-theme="b" data-mini="true" class="ui-btn-right toggleUnreadButton2" style="position: absolute; right: 80px;">✔</a>
       <a href="#artMenuPopup" data-role="button" data-mini="true"
         class="ui-btn-right" data-icon="bars"
         data-theme="b" data-rel="popup">Menu</a>
@@ -146,10 +145,10 @@
       </ul>
       <div class="gsnavbar">
           <div class="gsnavbar-dock">
-            <button type="button" onclick="window.history.back();"                   ><span>⬅</span><br/>Back</button>
+            <button type="button" onclick="document.getElementsByClassName('backButton')[0].click();"                   ><span>⬅</span><br/>Back</button>
             <button type="button" onclick="location.reload();"                       ><span>🔄</span><br/>Reload</button>
-            <button type="button" onclick="window.location.href='index.html#home'"><span>🏠</span><br/>Home</button>
-            <button type="button" onclick="document.getElementsByClassName('ui-link ui-btn ui-icon-arrow-r ui-btn-icon-right ui-corner-all')[0].click()" ><span>➡️</span><br/>Next</button>
+            <button type="button" onclick="window.location.href='index.html#home'"   ><span>🏠</span><br/>Home</button>
+            <button type="button" onclick="document.getElementsByClassName('toggleUnreadButton')[0].click(); document.getElementsByClassName('backButton')[0].click();" ><span>✔</span><br/>Read</button>
           </div>
         </div>
     </div>
