@@ -129,11 +129,13 @@ define(['api','backbone','utils'],
 
       // only action for a category: read
       if (method == "read"){
+        var unreadonly = settings.attributes.onlyUnread;     // get only feeds with unread articles
+        if (catId <= 0) { unreadonly = false;}
         var request = {
           op:             "getFeeds",
           cat_id:         catId,
           include_nested: false,
-          unread_only: settings.attributes.onlyUnread     // get only feeds with unread articles
+          unread_only: unreadonly
         };
 
         api.ttRssApiCall(
@@ -165,7 +167,18 @@ define(['api','backbone','utils'],
               }
             }
 
+            // Reoder "special" feeds
+            feedsModel.comparator = "title";
+            if (res[0]["cat_id"] <= 0){
+              var newmap = [3,2,1,0,4,5];
+              for (var i=0; i < res.length; i++) {
+                res[i]["order_id"] = newmap[i];
+              }
+              feedsModel.comparator = "order_id";
+            }
+
             // set collection with updated data
+            //console.error(JSON.stringify(res)); console.error(feedsModel.comparator);
             collection.set(res);
 
             // notify by a sync that the sync worked
@@ -302,7 +315,9 @@ define(['api','backbone','utils'],
         var orderBy = settings.get("articlesOldestFirst") === true ? "date_reverse" : "feed_dates";
 
         // set view_mode depending on options
-        var viewMode = settings.get("onlyUnread") ? "unread" : "adaptive";
+        var unreadonly = settings.get("onlyUnread");
+        if (feedId <= 0) { unreadonly = false;} 
+        var viewMode = unreadonly ? "unread" : "adaptive";
 
         // we need to fetch the articles list for this feed
         var msg = {
