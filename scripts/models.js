@@ -44,6 +44,7 @@ define(['api','backbone','utils'],
       articlesOldestFirst: false,
       darkMode: false,
       onlyUnread: false,
+      clickCategoryOpenAllItsArticles: false,
       icons_dir: "feed-icons/"
     },
 

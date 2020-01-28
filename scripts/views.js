@@ -8,8 +8,9 @@ define(['jquery', 'models', 'templates','conf','utils'],
   // a view for each row of a categories list
   CategoryRowView = Backbone.View.extend({
     render: function(){
+      var directlyOpenAllArticles = (localStorage["clickCategoryOpenAllItsArticles"] === "true" && this.model.id > 0 ? ("/feed-9"+this.model.id) : "")
       var html = tpl.listElement({
-        href:  '#cat' + this.model.id,
+        href:  '#cat' + this.model.id + directlyOpenAllArticles,
         title: this.model.get('title'),
         count: this.model.get('unread') });
 
@@ -1080,12 +1081,14 @@ define(['jquery', 'models', 'templates','conf','utils'],
       var resizeImages = this.model.get("resizeImages");
       var artOldestFirst = this.model.get("articlesOldestFirst");
       var onlyUnread = this.model.get("onlyUnread");
+      var clickCategoryOpenAllItsArticles = this.model.get("clickCategoryOpenAllItsArticles");
       var darkMode = this.model.get("darkMode");
       this.$("#resize-images").attr("value", resizeImages);
       this.$("#articles-number").attr("value", artNumber);
       this.$("#articles-oldest-first").prop("checked", artOldestFirst).checkboxradio("refresh");
       this.$("#only-unread").prop("checked", onlyUnread).checkboxradio("refresh");
       this.$("#dark-mode-option").prop("checked", darkMode).checkboxradio("refresh");
+      this.$("#click-category-open-all-its-articles").prop("checked", clickCategoryOpenAllItsArticles).checkboxradio("refresh");
       return this;
     },
 
@@ -1098,6 +1101,7 @@ define(['jquery', 'models', 'templates','conf','utils'],
           resizeImages: $("#resize-images-option").val(),
           articlesOldestFirst: $("#articles-oldest-first").prop("checked"),
           darkMode: $("#dark-mode-option").prop("checked"),
+          clickCategoryOpenAllItsArticles: $("#click-category-open-all-its-articles").prop("checked"),
           onlyUnread: $("#only-unread").prop("checked")
         },
         {validate: true}

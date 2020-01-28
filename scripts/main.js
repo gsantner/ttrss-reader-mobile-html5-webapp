@@ -53,6 +53,16 @@ requirejs(['jquery','backbone','conf','router','api','utils','models'],
         password : $('#passwordInput').val()
       };
 
+      $.ajaxSetup({
+        url: localStorage['url'] + 'api/',
+        contentType: "application/json",
+        dataType: 'json',
+        cache: 'false',
+        type: 'post',
+        timeout: 15000 // 15s by default
+      });
+
+
       jQuery.ajax(
         {
           url: localStorage['url'] + 'api/',

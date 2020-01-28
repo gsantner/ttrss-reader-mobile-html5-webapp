@@ -1,12 +1,7 @@
-/* Copy conf.js-dist to conf.js
-   and set it up for your environment.
+/* Copy conf.js-dist to conf.js to apply custom default values for your environment. */
 
-   DO NOT USE ANY FILESYSTEM PATH */
-
-if (!(localStorage['url'])) {
+if (false || (localStorage['conf_override_flag'] !== "ok")) {
+   localStorage['conf_override_flag'] = "ok";
    localStorage['url'] = "/ttrss/";
    localStorage['username'] = "ttrss";
 }
-
-define({
-});
