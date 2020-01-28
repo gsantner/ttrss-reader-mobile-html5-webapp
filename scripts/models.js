@@ -43,7 +43,8 @@ define(['api','backbone','utils'],
       resizeImages: 500,
       articlesOldestFirst: false,
       darkMode: false,
-      onlyUnread: false
+      onlyUnread: false,
+      icons_dir: "feed-icons/"
     },
 
     validate: function(attrs, options){

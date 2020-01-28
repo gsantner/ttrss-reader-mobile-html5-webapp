@@ -222,9 +222,6 @@ define(['jquery', 'models', 'templates','conf','utils'],
         // asked by the page view
         models.configModel.once("change:icons_dir", this.addIcon, this);
       }
-		if (typeof(Storage) !== "undefined" && localStorage['url']) {
-	conf.apiPath = localStorage['url'];
-}
 
       // the link src
       var link = "#cat" + utils.getCurrentCatId() + "/feed" + this.model.id;
@@ -240,7 +237,7 @@ define(['jquery', 'models', 'templates','conf','utils'],
 
       } else {
         // we add an icon
-        var iconSrc = conf.apiPath + iconsDir + "/" + this.model.id + ".ico";
+        var iconSrc = localStorage['url'] + iconsDir + "/" + this.model.id + ".ico";
         
         if (this.model.id <= 0) {
           iconSrc = "touch-icon-iphone.png";
@@ -494,7 +491,7 @@ define(['jquery', 'models', 'templates','conf','utils'],
       html = tpl.articleLiElementWithIcon({
           href:  link,
           date:  dateStr,
-          img:  (conf.apiPath + "feed-icons/" + feedId + ".ico"),
+          img:  (localStorage['url'] + "feed-icons/" + feedId + ".ico"),
           title: this.model.get('title') });
 
       } else {
@@ -503,7 +500,7 @@ define(['jquery', 'models', 'templates','conf','utils'],
         html = tpl.articleFeedLiElementWithIcon({
           href:  link,
           date:  dateStr,
-          img:  (conf.apiPath + "feed-icons/" + feedIdReal + ".ico"),
+          img:  (localStorage['url'] + "feed-icons/" + feedIdReal + ".ico"),
           title: this.model.get('title'),
           feed: feedTitle });
       }
