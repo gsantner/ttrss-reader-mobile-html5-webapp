@@ -20,6 +20,21 @@ define(['jquery'],function($){
       }
     },
 
+    
+    filterAppendFirstImageAttachement: function(content, model) { // model = article, content = text/notdom
+        content_image_attachment = "";
+        if (model.has("attachments") && model.get("attachments").length > 0 && model.get("attachments")[0].hasOwnProperty("content_url") && model.get("attachments")[0].hasOwnProperty("content_type") && model.get("attachments")[0]["content_type"].startsWith("image/") ){
+           content_image_attachment = model.get("attachments")[0]["content_url"];
+        }
+	if (content_image_attachment === "" && model.has("flavor_image") && model.get("flavor_image")) {
+	  content_image_attachment = model.get("flavor_image");
+	}
+	if (!content.includes(content_image_attachment) && content_image_attachment && content_image_attachment.includes(localStorage['url'])) {
+	  content = "<img src='" + content_image_attachment + "' />" + content;
+	}
+        return content;
+    },
+
     // clean up a dom object (article to display)
     cleanArticle: function(content, domain){
       var data = "<article>" + content + "</article>";

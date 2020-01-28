@@ -896,6 +896,7 @@ define(['jquery', 'models', 'templates','utils'],
         var article = this.model.get("content");
 
         // apply content filters
+        article = utils.filterAppendFirstImageAttachement(article, this.model);
         article = utils.cleanArticle(article, this.model.get("link"));
 
         // display article
