@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="stylesheet" href="style/main.css">
+  <script src="scripts/conf.js"></script>
   <script data-main="scripts/main" src="scripts/lib/require.js"></script>
   <link rel="icon" href="favicon.png">
   <meta name="theme-color" content="#FA9D39" />
@@ -74,16 +75,16 @@
       <form action="#" method="POST" data-ajax="false">      
         <div data-role="fieldcontain">
           <label for="urlInput">Server URL:</label>
-          <input type="text" name="url" id="urlInput" value="" placeholder="End with a Slash! /" />
+          <input type="text" name="url" id="urlInput" value="" placeholder="https://example.net/tt-rss/ -- End with a Slash(/)!" />
         </div>
         <div data-role="fieldcontain">
-          <label for="loginInput">Login:</label>
-          <input type="text" name="login" id="loginInput" value=""
+          <label for="loginInput">Username:</label>
+          <input type="text" name="login" id="loginInput" value="" placeholder="ttrss"
             autocapitalize="none" autocorrect="off" />
         </div>
         <div data-role="fieldcontain">
           <label for="passwordInput">Password:</label>
-          <input type="password" name="password" id="passwordInput" value="" />
+          <input type="password" name="password" id="passwordInput" value="" placeholder="**topsecret**" />
         </div>
         <button type="submit" data-theme="b">Login</button>
       </form>
@@ -228,10 +229,9 @@
         <input name="clickCategoryOpenAllItsArticles" id="click-category-open-all-its-articles" type="checkbox">
         <label for="click-category-open-all-its-articles">Show all articles of a clicked category</label>
       </form>
+      <p>Notice: Reload is required for changes to take full affect.</p>
     </div>
-    <div class="version">
-      <p>Version : 1.0</p>
-    </div>        <div class="gsnavbar">
+    <div class="gsnavbar">
         <div class="gsnavbar-dock">
           <button type="button" onclick="document.getElementsByClassName('backButton')[0].click();"                   ><span>⬅</span><br/>Back</button>
           <button type="button" onclick="document.getElementsByClassName('ui-link ui-btn ui-icon-arrow-r ui-btn-icon-right ui-corner-all')[0].click()" ><span>➡️</span><br/>Next</button>

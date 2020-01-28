@@ -1,7 +1,7 @@
 /************ BACKBONE views*************/
 
-define(['jquery', 'models', 'templates','conf','utils'],
-       function ($, models, tpl, conf, utils){
+define(['jquery', 'models', 'templates','utils'],
+       function ($, models, tpl, utils){
 
   /*********** categories *************/
 

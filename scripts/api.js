@@ -1,8 +1,8 @@
 
 // API functions
 
-define(['require','jquery','conf','router','models','utils'],
-       function(require, $, conf, router, models, utils){
+define(['require','jquery','router','models','utils'],
+       function(require, $, router, models, utils){
 
 
   // AJAX defaults

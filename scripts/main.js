@@ -24,8 +24,8 @@ requirejs.config({
   } //path
 });
 
-requirejs(['jquery','backbone','conf','router','api','utils','models'],
-  function($, Backbone, conf, router, api, utils, models){
+requirejs(['jquery','backbone','router','api','utils','models'],
+  function($, Backbone, router, api, utils, models){
 
   /************* utilities ***********/
 
