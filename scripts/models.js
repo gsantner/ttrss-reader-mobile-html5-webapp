@@ -40,6 +40,7 @@ define(['api','backbone','utils'],
 
     defaults: {
       articlesNumber: 200,
+      resizeImages: 500,
       articlesOldestFirst: false,
       darkMode: false,
       onlyUnread: false
@@ -201,9 +202,12 @@ define(['api','backbone','utils'],
 
     sync: function(method, model, options){
       if (method == "read"){ 
-        api.ttRssApiCall(
-          { op: 'getArticle',
-            article_id: model.id },
+
+        var msg = { op: 'getArticle', article_id: model.id };
+        if (parseInt(settings.get("resizeImages")) > 0) { 
+          msg["resize_width"] = settings.get("resizeImages");
+        }
+        api.ttRssApiCall(msg,
           function(m){
 
             if (m.length == 0){
@@ -328,6 +332,9 @@ define(['api','backbone','utils'],
           limit:          settings.get("articlesNumber"),
           order_by:       orderBy
         };
+        if (parseInt(settings.get("resizeImages")) > 0) { 
+          msg["resize_width"] = settings.get("resizeImages");
+        }
         
         if (feedId.toString().startsWith("-9")){
           // special case (all articles from a whole category)

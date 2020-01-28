@@ -187,7 +187,7 @@
           <div class="gsnavbar-dock">
             <button type="button" onclick="document.getElementsByClassName('backButton')[2].click();"                   ><span>⬅</span><br/>Back</button>
             <button type="button" onclick="document.getElementsByClassName('ui-link ui-btn ui-icon-arrow-r ui-btn-icon-right ui-corner-all')[0].click()" ><span>➡️</span><br/>Next</button>
-            <button type="button" onclick="document.getElementsByClassName('open-article-link ui-link')[0].click();"                       ><span>🌍</span><br/>Extern</button>
+            <button type="button" onclick="document.getElementsByClassName('open-article-link ui-link')[0].click();"                       ><span>🌍</span><br/>Open</button>
             <button type="button" onclick="window.location.href='index.html#home'"><span>🏠</span><br/>Home</button>
           </div>
         </div>
@@ -216,6 +216,9 @@
         <label for="articles-number">Number of articles to load:</label>
         <input name="artNumber" pattern="[0-9]*"
           id="articles-number" value="200" type="number">
+        <label for="resize-images-option">Resize images to max dimension (plugin required). Disable resize with 0:</label>
+        <input name="resizeImages" pattern="[0-9]*"
+          id="resize-images-option" value="500" type="number" placeholder="px">
         <input name="artOldestFirst" id="articles-oldest-first" type="checkbox">
         <label for="articles-oldest-first">Show oldest articles first</label>
         <input name="onlyUnread" id="only-unread" type="checkbox">

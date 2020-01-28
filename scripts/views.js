@@ -1080,9 +1080,11 @@ define(['jquery', 'models', 'templates','conf','utils'],
 
     render: function(){
       var artNumber = this.model.get("articlesNumber");
+      var resizeImages = this.model.get("resizeImages");
       var artOldestFirst = this.model.get("articlesOldestFirst");
       var onlyUnread = this.model.get("onlyUnread");
       var darkMode = this.model.get("darkMode");
+      this.$("#resize-images").attr("value", resizeImages);
       this.$("#articles-number").attr("value", artNumber);
       this.$("#articles-oldest-first").prop("checked", artOldestFirst).checkboxradio("refresh");
       this.$("#only-unread").prop("checked", onlyUnread).checkboxradio("refresh");
@@ -1096,6 +1098,7 @@ define(['jquery', 'models', 'templates','conf','utils'],
       event.data.model.set(
         {
           articlesNumber: $("#articles-number").val(),
+          resizeImages: $("#resize-images-option").val(),
           articlesOldestFirst: $("#articles-oldest-first").prop("checked"),
           darkMode: $("#dark-mode-option").prop("checked"),
           onlyUnread: $("#only-unread").prop("checked")
