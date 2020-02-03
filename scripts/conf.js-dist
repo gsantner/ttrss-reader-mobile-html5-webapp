@@ -2,6 +2,6 @@
 
 if (false || (localStorage['conf_override_flag'] !== "ok")) {
    localStorage['conf_override_flag'] = "ok";
-//   localStorage['url'] = "/ttrss/";
-//   localStorage['username'] = "ttrss";
+//   localStorage['ttrss_server_url'] = "/ttrss/";
+//   localStorage['ttrss_username'] = "ttrss";
 }

@@ -74,17 +74,17 @@
     <div data-role="content">
       <form action="#" method="POST" data-ajax="false">      
         <div data-role="fieldcontain">
-          <label for="urlInput">Server URL:</label>
-          <input type="text" name="url" id="urlInput" value="" placeholder="https://example.net/tt-rss/ -- End with a Slash(/)!" />
+          <label for="ttrss_server_urlInput">Server URL:</label>
+          <input type="text" name="ttrss_server_url" id="ttrss_server_urlInput" value="" placeholder="https://example.net/tt-rss/ -- End with a Slash(/)!" />
         </div>
         <div data-role="fieldcontain">
           <label for="loginInput">Username:</label>
-          <input type="text" autocomplete="username" name="login" id="loginInput" value="" placeholder="ttrss"
+          <input type="text" autocomplete="ttrss_username" name="login" id="loginInput" value="" placeholder="ttrss"
             autocapitalize="none" autocorrect="off" />
         </div>
         <div data-role="fieldcontain">
-          <label for="passwordInput">Password:</label>
-          <input type="password" name="password" id="passwordInput" value="" placeholder="**topsecret**" autocomplete="current-password" />
+          <label for="ttrss_passwordInput">Password:</label>
+          <input type="password" name="ttrss_password" id="ttrss_passwordInput" value="" placeholder="**topsecret**" autocomplete="current-password" />
         </div>
         <button type="submit" data-theme="b">Login</button>
       </form>

@@ -7,7 +7,7 @@ define(['require','jquery','router','models','utils'],
 
   // AJAX defaults
   $.ajaxSetup({
-    url: localStorage['url'] + 'api/',
+    url: localStorage['ttrss_server_url'] + 'api/',
     contentType: "application/json",
     dataType: 'json',
     cache: 'false',

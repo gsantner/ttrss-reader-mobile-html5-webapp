@@ -39,10 +39,9 @@ requirejs(['jquery','backbone','router','api','utils','models'],
 
 
 	if (typeof(Storage) !== "undefined") {
-	  var reload = false;//( localStorage['url'] !== $('#urlInput').val());
-      localStorage['url'] = $('#urlInput').val();
-      localStorage['username'] = $('#loginInput').val();
-      localStorage['password'] = $('#passwordInput').val();
+	  var reload = false;//( localStorage['ttrss_server_url'] !== $('#ttrss_server_urlInput').val());
+      localStorage['ttrss_server_url'] = $('#ttrss_server_urlInput').val();
+      localStorage['ttrss_username'] = $('#loginInput').val();
 		if (reload) {  location.reload();  }
     }
 
@@ -50,11 +49,11 @@ requirejs(['jquery','backbone','router','api','utils','models'],
       var data = {
         op: "login",
         user: $('#loginInput').val(),
-        password : $('#passwordInput').val()
+        password : $('#ttrss_passwordInput').val()
       };
 
       $.ajaxSetup({
-        url: localStorage['url'] + 'api/',
+        url: localStorage['ttrss_server_url'] + 'api/',
         contentType: "application/json",
         dataType: 'json',
         cache: 'false',
@@ -65,7 +64,7 @@ requirejs(['jquery','backbone','router','api','utils','models'],
 
       jQuery.ajax(
         {
-          url: localStorage['url'] + 'api/',
+          url: localStorage['ttrss_server_url'] + 'api/',
           contentType: "application/json",
           dataType: 'json',
           cache: 'false',
@@ -97,7 +96,7 @@ requirejs(['jquery','backbone','router','api','utils','models'],
           if (data.content.error == "API_DISABLED"){
             msg = 'API is disabled for this user';
           } else if (data.content.error == "LOGIN_ERROR"){
-            msg = "Specified username and password are incorrect";
+            msg = "ERROR: Entered username and password combination is wrong.";
           }
           alert(msg);
           $.mobile.loading('hide');
@@ -141,9 +140,8 @@ requirejs(['jquery','backbone','router','api','utils','models'],
 
       // alternative to localStorage using cookies
       utils.localStorageSupport();
-      if (localStorage['url']) { $('#urlInput').val(localStorage['url']); }
-      if (localStorage['username']) { $('#loginInput').val(localStorage['username']); }
-      if (localStorage['password']) { $('#passwordInput').val(localStorage['password']); }
+      if (localStorage['ttrss_server_url']) { $('#ttrss_server_urlInput').val(localStorage['ttrss_server_url']); }
+      if (localStorage['ttrss_username']) { $('#loginInput').val(localStorage['ttrss_username']); }
       
       // events for login page
       registerLoginPageActions();
