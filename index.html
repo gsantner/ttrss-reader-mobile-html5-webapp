@@ -246,11 +246,15 @@
       if (document.activeElement.nodeName.toLowerCase() === 'input') { return;}
       
       switch(e.keyCode) {
-        case 8: // backspace = go home
+        case 66: // B
+        case 8:  // backspace = go home
           e.preventDefault(); document.getElementsByClassName('backButton')[0].click(); break;
-        case 74: // backspace = go home
+        case 74: // J
           e.preventDefault(); document.getElementsByClassName('ui-link ui-btn ui-icon-arrow-r ui-btn-icon-right ui-corner-all')[0].click(); break;
-        case 75: // backspace = go home
+        case 79: // O
+        case 76: // L
+          e.preventDefault(); window.open(document.getElementsByClassName("open-article-link ui-link")[0].href); self.focus(); break;
+        case 75: // K
           if (document.getElementsByClassName('ui-disabled ui-link ui-btn ui-icon-arrow-l ui-btn-icon-left ui-shadow ui-corner-all').length > 0) {
             break;
           }
