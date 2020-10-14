@@ -96,3 +96,6 @@ div#read div[data-role=content]>div.main pre {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+
+article > div > p { max-width: 1000px; }
+@media (min-width:1025px) { article > div > p { max-width: 800px; } }
