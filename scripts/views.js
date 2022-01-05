@@ -192,13 +192,13 @@ define(['jquery', 'models', 'templates','utils'],
     // callback to add an icon to the list element
     addIcon: function(){
       // get the icons directory from the conf
-      var iconsDir = models.configModel.get("icons_dir");
+      var iconsDir = models.configModel.get("icons_dir") || (localStorage['ttrss_server_url'] + "feed-icons/");
 
       var iconSrc = localStorage['ttrss_server_url'] + iconsDir +
                     "/" + this.model.id + ".ico";
 
       if (this.model.id <= 0) {
-        iconSrc = "touch-icon-iphone.png";
+        iconSrc = "feed-fallback-icon.png";
       }
       var img = document.createElement('img');
       img.src = iconSrc;
@@ -216,7 +216,7 @@ define(['jquery', 'models', 'templates','utils'],
       var html;
       
       // get the icons directory from the conf
-      var iconsDir = models.configModel.get("icons_dir");
+      var iconsDir = models.configModel.get("icons_dir") || (localStorage['ttrss_server_url'] + "feed-icons/");
 
       if ((iconsDir == undefined) && (this.model.get("has_icon"))){
         // request to be notifed when icons path will be ready
@@ -241,7 +241,7 @@ define(['jquery', 'models', 'templates','utils'],
         var iconSrc = localStorage['ttrss_server_url'] + iconsDir + "/" + this.model.id + ".ico";
         
         if (this.model.id <= 0) {
-          iconSrc = "touch-icon-iphone.png";
+          iconSrc = "feed-fallback-icon.png";
         }
 
         html = tpl.listElementWithIcon({
@@ -492,7 +492,7 @@ define(['jquery', 'models', 'templates','utils'],
       html = tpl.articleLiElementWithIcon({
           href:  link,
           date:  dateStr,
-          img:  (localStorage['ttrss_server_url'] + "feed-icons/" + feedId + ".ico"),
+          img:  (localStorage['ttrss_server_url'] + "feed-icons/" + feedIdReal + ".ico"),
           title: this.model.get('title') });
 
       } else {
