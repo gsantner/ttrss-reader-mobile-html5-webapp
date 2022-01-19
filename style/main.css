@@ -11,7 +11,7 @@ div#read div[data-role=content]>div.header>h3{
 }
 
 div#read div[data-role=content]>div.header{
-  margin-bottom: 2em;
+  margin-bottom: 1px;
 }
 
 div#read div[data-role=content]>div.main img,
@@ -100,3 +100,14 @@ div#read div[data-role=content]>div.main pre {
 article > div > p { max-width: 1000px; }
 @media (min-width:1025px) { article > div > p { max-width: 800px; } }
 article img { max-height: 45vh; }
+
+.headerArticle > p { display:inline; }
+
+.headerArticle > h3 > a {
+	text-decoration: none;
+	color: inherit;
+	letter-spacing: -0.3px;
+	font-family: serif;
+	font-size: 130%;
+	font-weight: 970;
+}
