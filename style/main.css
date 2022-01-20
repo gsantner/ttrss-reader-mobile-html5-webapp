@@ -111,3 +111,6 @@ article img { max-height: 45vh; }
 	font-size: 130%;
 	font-weight: 970;
 }
+
+.ui-header.ui-bar-inherit { background: #333333; }
+.ui-title { color: #dddddd;}
