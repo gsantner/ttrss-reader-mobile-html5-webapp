@@ -114,3 +114,8 @@ article img { max-height: 45vh; }
 
 .ui-header.ui-bar-inherit { background: #333333; }
 .ui-title { color: #dddddd;}
+
+@media screen and (min-width: 800px) {
+    .ui-content { margin-left: 21%; margin-right: 21%; background: #f5f5f5; }
+    .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper { background-color: lightgrey; }
+}
