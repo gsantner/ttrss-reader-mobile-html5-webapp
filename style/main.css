@@ -99,7 +99,7 @@ div#read div[data-role=content]>div.main pre {
 
 article > div > p { max-width: 1000px; }
 @media (min-width:1025px) { article > div > p { max-width: 800px; } }
-article img { max-height: 45vh; }
+article img { max-height: 55vh; }
 
 .headerArticle > p { display:inline; }
 
