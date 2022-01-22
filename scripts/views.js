@@ -671,7 +671,7 @@ define(['jquery', 'models', 'templates','utils'],
         var msg = models.settings.get("onlyUnread") ?
           "No unread articles" :"No articles" ;
 
-        this.$lv.html(tpl.roListElement({text: msg}));
+        //this.$lv.html(tpl.roListElement({text: msg}));
         this.$lv.listview("refresh");
       }
 
