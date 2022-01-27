@@ -36,8 +36,9 @@ define(['underscore'], function(_){
 
     articleLiElementWithIcon : 
       _.template('<a href="<%= href %>">' +
-      '<img src="<%= img %>" class="ui-li-icon"></img><h3><%= title %><span style="float: right;" class="extra ui-li-desc"><%= date %></span></h3>' +
-      '</a>'),
+      '<img src="<%= img %>" class="ui-li-icon"></img><h3><%= title %>' +
+	  '<object><a target="_blank" style="color: inherit;" href="<%= articlelink %>"><span style="float: right; opacity: 0.6;" class="extra ui-li-desc"><%= date %></span></a></object>' +
+	  '</h3></a>'),
 
     // the content of a LI element for an article with the feed Name
     articleFeedLiElement : 

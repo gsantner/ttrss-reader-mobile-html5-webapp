@@ -493,6 +493,7 @@ define(['jquery', 'models', 'templates','utils'],
           href:  link,
           date:  dateStr,
           img:  (localStorage['ttrss_server_url'] + "feed-icons/" + feedIdReal + ".ico"),
+          articlelink: this.model.get("link"),
           title: this.model.get('title') });
 
       } else {
