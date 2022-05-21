@@ -39,7 +39,7 @@ define(['api','backbone','utils'],
     }, //sync
 
     defaults: {
-      articlesNumber: 9,
+      articlesNumber: (window.innerWidth > window.innerHeight ? 100 : 9),
       resizeImages: 500,
       articlesOldestFirst: false,
       darkMode: (window.matchMedia('(prefers-color-scheme: dark)').matches),
